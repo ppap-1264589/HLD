@@ -12,6 +12,16 @@ Trên thực tế, HLD chính là "duỗi" cây ra thành một dãy, và thao t
 
 [cp algorithms](https://cp-algorithms.com/graph/hld.html)
 
+## Kinh nghiệm
+
+- HLD không khó. (Chỉ rất dài thôi :) )
+
+- HLD quy về bản chất là Segment Tree trên cây
+
+- HLD quy về cách Merge hai node trên Segment tree như thế nào để phù hợp với bài toán đưa ra
+
+- Đừng dùng HLD nếu không cần thiết. Có thể chuyển kĩ thuật thành Chia căn trên cây, nhảy nhị phân LCA,... (HLD thực sự có lượng code dài hơn rất nhiều so với nhiều kĩ thuật khác)
+
 ## Bài toán cụ thể
 
 Cho một cây n đỉnh, có gốc là R người ta có thể thực hiện một lượng thao tác q trên cây:
@@ -66,6 +76,7 @@ void DFS(int& u){
         }
     }
     if (id_max != -1) swap(a[u][0], a[u][id_max]);
+    //the whole chain -> flatten into a consecutive sequence
 }
 
 static int HChain[maxn], DChain[maxn];
